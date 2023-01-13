@@ -12,11 +12,11 @@ public class DataHelper {
     private static final Faker faker = new Faker();
 
     public static Card getApprovedCard() {
-        return new Card("4444444444444441", "12", "22", faker.name().name(), "123");
+        return new Card("4444444444444441", "12", "23", faker.name().name(), "123");
     }
 
     public static Card getDeclinedCard() {
-        return new Card("4444444444444442", "12", "22", faker.name().name(), "123");
+        return new Card("4444444444444442", "12", "23", faker.name().name(), "123");
     }
 
     public static Card getEmptyCard() {
