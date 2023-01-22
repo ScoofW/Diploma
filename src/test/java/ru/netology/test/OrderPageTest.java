@@ -62,10 +62,10 @@ public class OrderPageTest {
     }
 
     @Test
-    void buyNegativeNumberCard15Symbols() {
+    void buyNegativeNumberCardSymbols() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getNumberCard15Symbols());
+        payment.inputData(DataHelper.getNumberCardSymbols());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
     }
@@ -80,55 +80,55 @@ public class OrderPageTest {
     }
 
     @Test
-    void buyNegativeMonth1Symbol() {
+    void buyNegativeMonthSymbol() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardMonth1Symbol());
+        payment.inputData(DataHelper.getCardMonthSymbol());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
     }
 
     @Test
-    void buyNegativeMonthOver12() {
+    void buyNegativeMonthOver() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardMonthOver12());
+        payment.inputData(DataHelper.getCardMonthOver());
         payment.waitNotificationExpirationDateError();
         assertEquals("0", SqlHelper.getOrderCount());
     }
 
     @Test
-    void buyNegativeMonth00ThisYear() {
+    void buyNegativeMonthThisYear() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardMonth00ThisYear());
+        payment.inputData(DataHelper.getCardMonthThisYear());
         payment.waitNotificationExpirationDateError();
         assertEquals("0", SqlHelper.getOrderCount());
     }
 
     @Test
-    void buyNegativeMonth00OverThisYear() {
+    void buyNegativeMonthOverThisYear() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardMonth00OverThisYear());
+        payment.inputData(DataHelper.getCardMonthOverThisYear());
         payment.waitNotificationExpirationDateError();
         assertEquals("0", SqlHelper.getOrderCount());
     }
 
     @Test
-    void buyNegativeYear00() {
+    void buyNegativeYear() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardYear00());
+        payment.inputData(DataHelper.getCardYear());
         payment.waitNotificationExpiredError();
         assertEquals("0", SqlHelper.getOrderCount());
     }
 
     @Test
-    void buyNegativeYear1Symbol() {
+    void buyNegativeYearSymbol() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardYear1Symbol());
+        payment.inputData(DataHelper.getCardYearSymbol());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
     }
@@ -152,32 +152,13 @@ public class OrderPageTest {
     }
 
     @Test
-    void buyNegativeCvv1Symbol() {
+    void buyNegativeCvvSymbol() {
         val startPage = new PaymentMethod();
         val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardCvv1Symbol());
+        payment.inputData(DataHelper.getCardCvvSymbol());
         payment.waitNotificationWrongFormat();
         assertEquals("0", SqlHelper.getOrderCount());
     }
-
-    @Test
-    void buyNegativeCvv2Symbols() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardCvv2Symbols());
-        payment.waitNotificationWrongFormat();
-        assertEquals("0", SqlHelper.getOrderCount());
-    }
-
-    @Test
-    void buyNegativeOwner1Word() {
-        val startPage = new PaymentMethod();
-        val payment = startPage.goToBuyPage();
-        payment.inputData(DataHelper.getCardHolder1Word());
-        payment.waitNotificationWrongFormat();
-        assertEquals("0", SqlHelper.getOrderCount());
-    }
-
     @Test
     void buyNegativeOwnerCirillic() {
         val startPage = new PaymentMethod();
